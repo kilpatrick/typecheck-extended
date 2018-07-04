@@ -1,7 +1,5 @@
 /* eslint valid-typeof: 0 */
 
-exports.TypeCheck = TypeCheckExtended;
-
 function TypeCheckExtended(parameter, type, required = true, format = null) {
   /*
   Used at top of functions to validate type of parameters received.
@@ -57,3 +55,5 @@ function TypeCheckExtended(parameter, type, required = true, format = null) {
 
   return true;
 }
+
+exports.TypeCheck = TypeCheckExtended;

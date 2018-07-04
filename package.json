@@ -1,14 +1,19 @@
 {
   "name": "typecheck-extended",
   "version": "0.1.0",
+  "description": "Extended JavaScript Type Validator",
   "license": "MIT",
     "author": {
     "name": "Chris Kilpatrick",
     "email": "open@chriskilpatrick.com",
     "url": "https://github.com/kilpatrick"
   },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/kilpatrick/typecheck-extended"
+  },
   "readmeFilename": "README.md",
-  "main": "./index.js",
+  "main": "index.js",
   "dependencies": {},
   "scripts": {},
   "devDependencies": {
@@ -16,6 +21,6 @@
     "eslint-config-airbnb": "16.1.0",
     "eslint-plugin-import": "2.9.0",
     "eslint-plugin-jasmine": "2.9.2",
-    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-jsx-a11y": "6.0.3"
   }
 }
