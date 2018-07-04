@@ -56,4 +56,4 @@ function TypeCheckExtended(parameter, type, required = true, format = null) {
   return true;
 }
 
-exports.TypeCheck = TypeCheckExtended;
+module.exports = TypeCheckExtended;
