@@ -1,0 +1,21 @@
+{
+  "name": "typecheck-extended",
+  "version": "0.1.0",
+  "license": "MIT",
+    "author": {
+    "name": "Chris Kilpatrick",
+    "email": "open@chriskilpatrick.com",
+    "url": "https://github.com/kilpatrick"
+  },
+  "readmeFilename": "README.md",
+  "main": "./index.js",
+  "dependencies": {},
+  "scripts": {},
+  "devDependencies": {
+    "eslint": "4.13.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-import": "2.9.0",
+    "eslint-plugin-jasmine": "2.9.2",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+  }
+}
