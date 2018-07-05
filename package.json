@@ -26,5 +26,21 @@
     "eslint-plugin-jasmine": "2.9.2",
     "eslint-plugin-jsx-a11y": "6.0.3",
     "jest": "23.3.0"
-  }
+  },
+  "keywords": [
+    "array",
+    "check",
+    "checking",
+    "checker",
+    "enum",
+    "getType",
+    "instanceOf",
+    "object",
+    "type",
+    "typechecking",
+    "typeOf",
+    "types",
+    "validator",
+    "variable"
+  ]
 }
