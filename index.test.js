@@ -1,4 +1,4 @@
-import TypeCheck from './';
+var TypeCheck = require('./');
 
 function testFunction() {}
 const testArray = ['bob', 'sally'];
