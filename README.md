@@ -1,4 +1,4 @@
-# typecheck-extended (1.0.0)
+# typecheck-extended &middot; ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![npm version](https://img.shields.io/npm/v/typecheck-extended.svg?style=flat)](https://www.npmjs.com/package/typecheck-extended) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 JavaScript type checker with extended types. Validates all built-in types. Additionally adds support for `enums` and makes an easier distinction between `array` and `object`.   
 
