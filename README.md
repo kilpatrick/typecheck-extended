@@ -1,4 +1,4 @@
-# typecheck-extended (0.1.0)
+# typecheck-extended (1.0.0)
 
 JavaScript type checker with extended types. Validates all built-in types. Additionally adds support for `enums` and makes an easier distinction between `array` and `object`.   
 
