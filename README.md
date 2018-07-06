@@ -20,10 +20,31 @@ The following native JS types are supported as-is:
 - `undefined`
 
 ### Extended Types
-The following have been added or modified from the expected JS return of `typeof foo`.
-- `array`: Provides a better distinction between arrays (ex. `['a', 'b', 'c']`) and non-array objects.
-- `enum`: value must be included in a predefined list
-- `object`: Excludes arrays from object test. Checks for non-array objects. (ex. `{ a: 1, b: 2, c: 3 }`)
+
+- `array`: Arrays only. (ex. `['a', 'b', 'c']`)
+- `enum`: Adds enum support.
+- `object`: *Non-array* objects only. (ex. `{ a: 1, b: 2, c: 3 }`)
+
+In javascript, arrays have a `typeof` "object". typecheck-extended excludes arrays from an "object" type check.
+```javascript
+/*
+  Standard Javascript
+*/
+>> typeof ['River Tam', 'Mal Reynolds']; // Returns "object"
+>> typeof { name: 'Kaylee Frye' }; // Returns "object"
+>> Array.isArray(['River Tam', 'Mal Reynolds']); // Returns true
+>> Array.isArray({ name: 'Kaylee Frye' }); // Returns false
+
+/*
+  typecheck-extended
+*/
+>> TypeCheck(['River Tam', 'Mal Reynolds'], 'array'); // Returns true
+>> TypeCheck({ name: 'Kaylee Frye' }, 'array'); // Throws error
+>> TypeCheck({ name: 'Kaylee Frye' }, 'object'); // Returns true
+>> TypeCheck(['River Tam', 'Mal Reynolds'], 'object'); // Throws error
+
+```
+
 
 ## Example Usage
 
@@ -36,7 +57,7 @@ The following have been added or modified from the expected JS return of `typeof
 
 
 ### Ex. Required String:   
-`name` must be passed in AND be `string`. 
+`name` must be received AND be `string`. 
 
 ```javascript
 function SayHi(name) {
@@ -46,7 +67,7 @@ function SayHi(name) {
 ```
 ### Ex. Optional String:   
 `name` can be `undefined` or `null`
-Otherwise, any value passed in must be `string`. 
+If `name` is received, it must be `string`. 
 
 ```javascript
 function SayHi2(name) {
@@ -59,8 +80,8 @@ function SayHi2(name) {
 ```
 
 ### Ex. Required Enum:   
-`uuid` must be passed in AND be `string`.   
-`color` must be passed in AND be `red`, `green`, or `blue`. 
+`uuid` must be received AND be `string`.   
+`color` must be received AND be `red`, `green`, or `blue`. 
 ```javascript
 const availableColors = ['red', 'green', 'blue'];
 function SaveColorValue(uuid, color) {
@@ -69,3 +90,7 @@ function SaveColorValue(uuid, color) {
   SaveToDb(uuid, color);
 }
 ```
+
+
+---
+###### typecheck-extended uses [Semantic Versioning](https://semver.org). | Released under [MIT License](https://opensource.org/licenses/MIT).
