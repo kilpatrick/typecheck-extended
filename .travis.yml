@@ -1,4 +1,4 @@
 language: node_js
 node_js:
-  - "7"
-script: jest --coverage --coverageReporters=text-lcov | coveralls
+  - "8"
+script: jest --coverage --coverageReporters=text-lcov | coveralls && exit ${PIPESTATUS[0]}
