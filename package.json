@@ -20,12 +20,12 @@
   },
   "devDependencies": {
     "coveralls": "3.0.2",
-    "eslint": "4.13.1",
-    "eslint-config-airbnb": "16.1.0",
-    "eslint-plugin-import": "2.9.0",
-    "eslint-plugin-jasmine": "2.9.2",
-    "eslint-plugin-jsx-a11y": "6.0.3",
-    "jest": "23.3.0"
+    "eslint": "5.8.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jasmine": "2.10.1",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "jest": "23.6.0"
   },
   "keywords": [
     "array",
