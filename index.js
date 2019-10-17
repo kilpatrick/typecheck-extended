@@ -34,8 +34,8 @@ function TypeCheckExtended(parameter, type, required = true, format = null) {
   if (required || (!required && parameter)) {
     // Differentiate between arrays and non-array objects
     if (
-      (type === 'array' && !Array.isArray(parameter)) ||
-      (type === 'object' && Array.isArray(parameter))
+      (type === 'array' && !Array.isArray(parameter))
+      || (type === 'object' && Array.isArray(parameter))
     ) {
       throw new Error(`TypeCheck Error: (${parameter}) should be ${type}`);
     }

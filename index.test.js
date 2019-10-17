@@ -1,4 +1,4 @@
-var TypeCheck = require('./');
+const TypeCheck = require('./');
 
 function testFunction() {}
 const testArray = ['bob', 'sally'];
