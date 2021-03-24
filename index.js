@@ -16,6 +16,7 @@ function TypeCheckExtended(parameter, type, required = true, format = null) {
   const types = [
     'array',
     'boolean',
+    'date',
     'enum',
     'function',
     'number',
@@ -26,6 +27,7 @@ function TypeCheckExtended(parameter, type, required = true, format = null) {
   ];
 
   const extendedTypes = ['array', 'enum'];
+  const instanceTypes = { date: Date };
 
   if (!types.includes(type)) {
     throw new Error(`TypeCheck Error: (${type}) is not a valid type.`);
@@ -48,11 +50,18 @@ function TypeCheckExtended(parameter, type, required = true, format = null) {
       throw new Error(`TypeCheck Error: (${parameter}) is invalid enum.`);
     }
 
+    // Instance Type checks
+    if (Object.keys(instanceTypes).includes(type)) {
+      if (!(parameter instanceof instanceTypes[type])) {
+        throw new Error(`TypeCheck Error: (${parameter}) should be ${type}`);
+      }
+      return true;
+    }
+
     if (!extendedTypes.includes(type) && typeof parameter !== type) {
       throw new Error(`TypeCheck Error: (${parameter}) should be ${type}`);
     }
   }
-
   return true;
 }
 

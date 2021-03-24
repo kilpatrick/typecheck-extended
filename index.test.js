@@ -11,6 +11,7 @@ const testSymbol = Symbol(testObject);
 const types = {
   arr: 'array',
   bool: 'boolean',
+  date: 'date',
   enum: 'enum',
   func: 'function',
   num: 'number',
@@ -77,6 +78,11 @@ describe('Type Check Service', () => {
       .toBe(true);
   });
 
+  it('TypeCheck: Date is Date', () => {
+    expect(TypeCheck(new Date(), 'date'))
+      .toBe(true);
+  });
+
   // Should Throw
   it('TypeCheck: Undefined IS NOT Boolean', () => {
     expect(() => { TypeCheck(types.und, types.bool); })
@@ -140,5 +146,12 @@ describe('Type Check Service', () => {
   it('TypeCheck: Fake News Type', () => {
     expect(() => { TypeCheck(testObject, 'Fake News'); })
       .toThrow('TypeCheck Error: (Fake News) is not a valid type.');
+  });
+
+  it('TypeCheck: Not a date is not a valid date', () => {
+    expect(() => {
+      TypeCheck('42', 'date');
+    })
+      .toThrow('TypeCheck Error: (42) should be date');
   });
 });
