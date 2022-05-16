@@ -11,7 +11,7 @@ jobs:
           command: yarn install
       - run:
           name: "Run Tests"
-          command: jest --coverage --coverageReporters=text-lcov | coveralls && exit ${PIPESTATUS[0]}
+          command: yarn run ci-test-w-coverage
 
 workflows:
   run-tests-workflow:
