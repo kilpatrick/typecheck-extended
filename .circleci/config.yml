@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  run-tests-job:
+    docker:
+      - image: cimg/node:16.15.0-browsers
+    steps:
+      - checkout
+      - run:
+          name: "Install Dependencies"
+          command: yarn install
+      - run:
+          name: "Run Tests"
+          command: jest --coverage --coverageReporters=text-lcov | coveralls && exit ${PIPESTATUS[0]}
+
+workflows:
+  run-tests-workflow:
+    jobs:
+      - run-tests-job

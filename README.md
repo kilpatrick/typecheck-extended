@@ -1,8 +1,12 @@
-# typecheck-extended &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![npm version](https://img.shields.io/npm/v/typecheck-extended.svg?style=flat)](https://www.npmjs.com/package/typecheck-extended) [![Coverage Status](https://img.shields.io/coveralls/kilpatrick/typecheck-extended/master.svg?style=flat)](https://coveralls.io/github/kilpatrick/typecheck-extended?branch=master) [![CI Status](https://img.shields.io/travis/kilpatrick/typecheck-extended.svg)](https://travis-ci.org/kilpatrick/typecheck-extended/) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+# typecheck-extended &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![npm version](https://img.shields.io/npm/v/typecheck-extended.svg?style=flat)](https://www.npmjs.com/package/typecheck-extended) [![Coverage Status](https://img.shields.io/coveralls/kilpatrick/typecheck-extended/master.svg?style=flat)](https://coveralls.io/github/kilpatrick/typecheck-extended?branch=master) [![CI Status](https://circleci.com/gh/kilpatrick/typecheck-extended.svg?style=svg)](https://circleci.com/gh/kilpatrick/typecheck-extended) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 
 
-JavaScript type checker with extended types. Validates all built-in types. Additionally adds support for `enums` and makes an easier distinction between `array` and `object`.   
+
+
+
+
+JavaScript type checker with extended types. Validates all built-in types. Additionally adds support for `enums` and makes an easier distinction between `array` and `object`.
 
 ## Install
 
@@ -11,7 +15,7 @@ JavaScript type checker with extended types. Validates all built-in types. Addit
 ## Available Types
 
 ### Standard Types
-The following native JS types are supported as-is: 
+The following native JS types are supported as-is:
 - `boolean`
 - `function`
 - `number`
@@ -56,8 +60,8 @@ In javascript, arrays have a `typeof` "object". typecheck-extended excludes arra
 - `format`: **Array** - List of valid `enums`. *(Optional).*
 
 
-### Ex. Required String:   
-`name` must be received AND be `string`. 
+### Ex. Required String:
+`name` must be received AND be `string`.
 
 ```javascript
 function SayHi(name) {
@@ -65,9 +69,9 @@ function SayHi(name) {
   return (`Hi ${name}!`);
 }
 ```
-### Ex. Optional String:   
+### Ex. Optional String:
 `name` can be `undefined` or `null`
-If `name` is received, it must be `string`. 
+If `name` is received, it must be `string`.
 
 ```javascript
 function SayHi2(name) {
@@ -79,9 +83,9 @@ function SayHi2(name) {
 }
 ```
 
-### Ex. Required Enum:   
-`uuid` must be received AND be `string`.   
-`color` must be received AND be `red`, `green`, or `blue`. 
+### Ex. Required Enum:
+`uuid` must be received AND be `string`.
+`color` must be received AND be `red`, `green`, or `blue`.
 ```javascript
 const availableColors = ['red', 'green', 'blue'];
 function SaveColorValue(uuid, color) {
