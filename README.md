@@ -93,4 +93,4 @@ function SaveColorValue(uuid, color) {
 
 
 ---
-###### typecheck-extended uses [Semantic Versioning](https://semver.org). | Copyright © 2021 Chris Kilpatrick. Released under [MIT License](https://opensource.org/licenses/MIT).
+###### typecheck-extended uses [Semantic Versioning](https://semver.org). | Copyright © 2022 Chris Kilpatrick. Released under [MIT License](https://opensource.org/licenses/MIT).
